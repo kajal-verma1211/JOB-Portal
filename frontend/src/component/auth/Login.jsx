@@ -19,7 +19,7 @@ const Login = () => {
     role: "", // Ensure role is part of state
   });
 
-  const { loading, user } = useSelector((store) => store.auth);
+  const { loading } = useSelector((store) => store.auth);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -117,7 +117,7 @@ const Login = () => {
                 <Input
                   type="radio"
                   name="role"
-                  value="Student"
+                  value="student"
                   className="cursor-pointer"
                   onChange={changeEventHandler}
                   required
@@ -128,7 +128,7 @@ const Login = () => {
                 <Input
                   type="radio"
                   name="role"
-                  value="Recruiter"
+                  value="recruiter"
                   className="cursor-pointer"
                   onChange={changeEventHandler}
                   required

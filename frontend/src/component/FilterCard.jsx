@@ -10,7 +10,7 @@ const filterData = [
   },
   {
     filterType: "Industry",
-    array: ["Delhi NCR", "Banglore", "Hyderabad", "Pune", "Mumbai"],
+    array: ["Frontend Developer", "Backend Developer", "Full Stack Developer"],
   },
   {
     filterType: "Salary",
