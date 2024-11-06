@@ -38,24 +38,25 @@ export const registerCompany = async(req,res) =>{
     }
 }
 
-export const getCompany = async (req,res) =>{
+export const getCompany = async (req, res) => {
     try {
-        const userId= req.id;//logged in user id 
-        const companies = await Company.findOne({userId})
-        if(!companies){
+        const userId = req.id; // logged in user id
+        const companies = await Company.find({ userId }); // Updated to find all companies
+
+        if (!companies || companies.length === 0) {
             return res.status(404).json({
-                message:"Companies not found",
+                message: "Companies not found",
                 success: false
-            })
+            });
         }
 
         return res.status(200).json({
             companies,
-            success:true
-        })
+            success: true
+        });
     } catch (error) {
-        console.log(error);
-        
+        console.error(error); // Log the error for debugging
+        return res.status(500).json({ message: "Internal Server Error" }); // Return error response
     }
 }
 
